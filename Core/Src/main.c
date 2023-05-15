@@ -96,11 +96,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // LED on
-	  HAL_Delay(1000); // delay 는 ms 단위
+	  if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) == GPIO_PIN_SET){
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // LED off
+//		  HAL_Delay(1000); // delay 는 ms 단위
+	  }
+	  else {
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // LED on
+//		  HAL_Delay(1000); // delay 는 ms 단위
+	  }
 
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // LED off
-	  HAL_Delay(1000); // delay 는 ms 단위
+
   }
   /* USER CODE END 3 */
 }
