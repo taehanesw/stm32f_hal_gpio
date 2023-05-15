@@ -3,3 +3,13 @@ Drivers/
 *.elf
 *.hex
 *.bin
+# vim hisotry files
+*.v~
+*.vhd~
+*.swp
+*.un~
+*_run~
+
+# ignore hisotry
+.ignore~
+
